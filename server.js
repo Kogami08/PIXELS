@@ -39,3 +39,20 @@ app.use((req,res,next) => {
 
 module.exports = app;
 
+
+
+/*
+require('dotenv').config();
+
+const app = require('./server');
+require('./database');
+
+console.log(process.env.TESTING);
+
+
+app.listen(app.get('port'), () => {
+    console.log('Esta funcionando en:', app.get('port'))
+})
+
+
+*/
