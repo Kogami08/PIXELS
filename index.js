@@ -21,6 +21,15 @@ app.get('/login', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home')
 })
+app.get('/vista2', (req, res) => {
+  res.render('vista2')
+})
+app.get('/vista3', (req, res) => {
+  res.render('vista3')
+})
+app.get('/vista4', (req, res) => {
+  res.render('vista4')
+})
 
 
 
