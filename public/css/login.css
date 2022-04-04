@@ -1,7 +1,7 @@
 body{
 	margin: 100px;
 	color:#ffffff;
-	background-image:url(https://media.giphy.com/media/xTiTnsBqIrT8SPb4T6/giphy.gif);
+	background-image:url(https://media.giphy.com/media/MaXOUjkV73aO4/giphy.gif);
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
@@ -84,7 +84,7 @@ a{color:inherit;text-decoration:none}
 	background:rgba(255,255,255,.1);
 }
 .login-form .group input[data-type="password"]{
-	-text-security: circle;
+	input-security: circle; /*CONTRASEÑAAA EN TEXT-security*/
 	-webkit-text-security:circle;
 }
 .login-form .group .label{

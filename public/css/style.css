@@ -134,7 +134,7 @@ body {
     /*CONTENIDO DEL BOX EN P*/
   display: inline-block;
   font-size: 2.2rem;
-  color: #B5B4B4;
+  color: #b4b4b5;
   margin-bottom: 2rem;
   margin-right: 5rem;
 }
@@ -347,6 +347,13 @@ body {
 .info{
     text-align: center;
     font-size: x-large;
+}
+
+.lista{
+  font-size: large;
+  color: #b4b4b5;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
 }
 /*PIXELS TITULO*/
 .titulo span {
