@@ -3,10 +3,35 @@ const res  = require('express/lib/response');
 const app  = express();
 const port = 3000
 const path = require('path');
+const mongoose = require('mongoose')
+require('dotenv').config(); //seteamos el donenv
 
 app.set('view engine', 'ejs')
 app.set('views',path.join(__dirname, '/views'))
 
+app.use(express.urlencoded({extended: false})); //JSON
+
+
+//INICIO DE MONGODB (CONEXION)
+const MONGODBHOST = process.env.MONGODBHOST;
+const MONGODBDATABASE = process.env.MONGODBDATABASE;
+
+const MONGODB_URI = `mongodb://${MONGODBHOST}/${MONGODBDATABASE}`;
+
+mongoose.connect(MONGODB_URI, function(err){ 
+    if (err){
+        throw err;
+    }else{
+        console.log(`BIENVENIDO A LA BASE DE ${MONGODB_URI}`)
+    }
+}) 
+
+.then(db => console.log('Ya jalo la base de datos, CONECTADA'))
+.catch(err => console.log(err));
+
+//FIN DE MONGODB (CONEXION)
+
+console.log(process.env.MONGODBDATABASE);// mensaje en la consola
 
 app.use(express.static(__dirname + "/public"))
 
