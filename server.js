@@ -1,8 +1,11 @@
 const express = require('express');
-const res = require('express/lib/response');
-const app = express();
+const res  = require('express/lib/response');
 const path = require('path');
+const app  = express();
+const mongoose = require('mongoose');
 
+/*Static Files*/
+app.use(express.static(path.join(__dirname, '/public')))
 
 /*SETTINGS*/
 app.set('view engine', 'ejs')
@@ -13,10 +16,6 @@ app.set('port', process.env.PORT || 4000)
 /*Middlewares*/
 
 app.use(express.urlencoded({extended: false})); /*JSON*/
-
-/*Static Files*/
-app.use(express.static(path.join(__dirname, '/public')))
-
 
 /*SET DE RUTAS*/
 
