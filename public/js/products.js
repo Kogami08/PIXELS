@@ -15,3 +15,5 @@ function imprSelect(imp1) {
   
     document.body.innerHTML = contenidoOriginal;
   }
+
+  

@@ -269,6 +269,12 @@
     display: grid;
     place-items: center;
   }*/
+.boton{
+  text-align: center;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
 
 .ticket{
   display: grid;
