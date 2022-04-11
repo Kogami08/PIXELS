@@ -5,11 +5,13 @@ const port = 3000
 const path = require('path');
 const mongoose = require('mongoose')
 require('dotenv').config(); //seteamos el donenv
+const morgan = require('morgan')
 
 app.set('view engine', 'ejs')
 app.set('views',path.join(__dirname, '/views'))
 
 app.use(express.urlencoded({extended: false})); //JSON
+app.use(morgan('dev'));
 
 
 //INICIO DE MONGODB (CONEXION)
