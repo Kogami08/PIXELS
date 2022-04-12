@@ -1,3 +1,50 @@
 <%- include("templates/head.ejs") %>
-    <h1>vista3</h1>
+    
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="Pongan el titulo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="descripcion" cols="80" class="form-control" placeholder="Insertar ina descripcion"></textarea>
+                        </div>
+                        <button type="submit" class=" btn btn-primary">
+                            La neta ya me enoje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="container">
+                <table class="rwd_auto fontsize">
+                  <thead>
+                    <tr class="head">
+                      <th>ID</th>
+                      <th>Titulo</th>
+                      <th>descripcion</th>
+                      <th>Operacion</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>Mart&iacute;n</td>
+                        <td>Iglesias Lenci</td>
+                        <td>Desarrollador</td>
+                        <td>@martinigleu</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+</div>
+
+
 <%- include("templates/footer.ejs") %>
