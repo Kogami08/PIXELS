@@ -38,7 +38,7 @@
   }
 }
 
-.card {
+.card-img {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -51,11 +51,11 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 600px) {
-  .card {
+  .card-img {
     height: 350px;
   }
 }
-.card:before {
+.card-img:before {
   content: "";
   position: absolute;
   top: 0;
@@ -67,7 +67,7 @@
   transition: transform calc(var(--d) * 1.5) var(--e);
   pointer-events: none;
 }
-.card:after {
+.card-img:after {
   content: "";
   display: block;
   position: absolute;
@@ -80,16 +80,17 @@
   transform: translateY(-50%);
   transition: transform calc(var(--d) * 2) var(--e);
 }
-.card:nth-child(1):before {
+.card-img:nth-child(1):before {
   background-image: url(https://m.media-amazon.com/images/I/41sgFPc6aIS._AC_SY450_.jpg);
 }
-.card:nth-child(2):before {
+.card-img:nth-child(2):before {
   background-image: url(https://m.media-amazon.com/images/I/31aYGyreYrL._AC_SY450_.jpg);
+  background-position: 0%;
 }
-.card:nth-child(3):before {
+.card-img:nth-child(3):before {
   background-image: url(https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/mg/gm/3pp/asr/c99cd6db-f942-4943-9f04-fd532bd7fbc4.08984b4f34f7ce353dc35fe3dd5fc05a.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff);
 }
-.card:nth-child(4):before {
+.card-img:nth-child(4):before {
   background-image: url(img/00699281-7c62-4f07-84ac-48f39a957a1a.afa8c87cb47f09aef9d0cc6dd437e16b.webp);
 }
 
@@ -154,116 +155,35 @@
     transition: transform var(--d) var(--e), opacity var(--d) var(--e);
   }
 
-  .card:hover,
+  .card-img:hover,
 .card:focus-within {
     align-items: center;
   }
-  .card:hover:before,
+  .card-img:hover:before,
 .card:focus-within:before {
     transform: translateY(-4%);
   }
-  .card:hover:after,
+  .card-img:hover:after,
 .card:focus-within:after {
     transform: translateY(-50%);
   }
-  .card:hover .content,
-.card:focus-within .content {
+  .card-img:hover .content,
+.card-img:focus-within .content {
     transform: translateY(0);
   }
-  .card:hover .content > *:not(.title),
-.card:focus-within .content > *:not(.title) {
+  .card-img:hover .content > *:not(.title),
+.card-img:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
   }
 
-  .card:focus-within:before, .card:focus-within:after,
-.card:focus-within .content,
-.card:focus-within .content > *:not(.title) {
+  .card-img:focus-within:before, .card:focus-within:after,
+.card-img:focus-within .content,
+.card-img:focus-within .content > *:not(.title) {
     transition-duration: 0s;
   }
 }
-
-/*FLOAT USUARIO*/
-.floating-menu {
-    width: 50px;
-    height: auto;
-    text-align: center;
-    position: fixed;
-    right: 50px;
-    top: 50px;
-    color: white;
-    /* padding: 20px 0; */
-    /* border-radius: 50% 50% 0 0; */
-  }
-  .floating-menu .trigger {
-    height: 50px;
-    background: #03a9f4;
-    width: 50px;
-    display: block;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 50%;
-    transition: all 0.2s;
-  }
-  .floating-menu .trigger i {
-    line-height: 50px;
-  }
-  .floating-menu .items {
-    background: #03a9f4;
-    padding-top: 10px;
-    position: relative;
-    top: -10px;
-    z-index: -1;
-    transition: all 0.2s;
-    opacity: 0;
-  }
-  .floating-menu .items:after {
-    position: absolute;
-    content: "";
-    display: block;
-    height: 50px;
-    width: 50px;
-    background: #03A9F4;
-    border-radius: 0 0 50% 50%;
-    transition: all 0.2s;
-    top: 85%;
-    z-index: -1;
-  }
-  .floating-menu .items .item {
-    display: block;
-    padding: 10px 0;
-    cursor: pointer;
-    color: white;
-    opacity: 0.8;
-  }
-  .floating-menu .items .item:hover {
-    opacity: 1;
-  }
-  body.active-floating-menu .floating-menu {
-    z-index: 111111;
-  }
-  body.active-floating-menu .floating-menu .items {
-    top: -8px;
-    transition: all 0.2s;
-    opacity: 1;
-  }
-  body.active-floating-menu .floating-menu .trigger {
-    border-radius: 50% 50% 0 0;
-    transition: all 0.2s;
-  }
-  body.active-floating-menu:after {
-    position: fixed;
-    content: "";
-    display: block;
-    background: #000;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.7;
-  }
-/*PESTAÑA PRINT*/
 
 /*body {
     display: grid;
