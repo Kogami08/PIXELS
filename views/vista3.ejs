@@ -1,6 +1,5 @@
 <%- include("templates/headtask.ejs") %>
 <pre>
-    <%= tasks %>
 </pre>
 
    
@@ -32,30 +31,22 @@
                           <th>Titulo</th>
                           <th>descripcion</th>
                           <th>Operacion</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Mart&iacute;n</td>
-                          <td>Iglesias Lenci</td>
-                          <td>Desarrollador</td>
-                          <td>@martinigleu</td>
-                          
-                        </tr>
-                        <tr>
-                          <td>Mart&iacute;n</td>
-                          <td>Iglesias Lenci</td>
-                          <td>Desarrollador</td>
-                          <td>@martinigleu</td>
-                          
-                        </tr>
-                        <tr>
-                          <td>Mart&iacute;n</td>
-                          <td>Iglesias Lenci</td>
-                          <td>Desarrollador</td>
-                          <td>@martinigleu</td>
-                          
-                        </tr>
+                          <% for (var i = 0; i < tasks.length; i++) { %>
+                            <tr>
+                                <td><%= i + 1 %> </td>
+                                <td><%= tasks[i].title %> </td>
+                                <td><%= tasks[i].descripcion %> </td>
+                                <td>
+                                    <a href="" class="btn btn-dark"> Simon</a>
+                                    <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger"> Valio</a>
+                                    <a href="" class="btn btn-info">Edit</a>
+                                </td>
+                            </tr>
+                          <% } %>
                       </tbody>
                     </table>
                   </div>
