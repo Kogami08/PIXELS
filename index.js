@@ -66,16 +66,40 @@ app.post('/add', async (req, res) => {
   res.redirect('/vista3');
 });
 
-router.get('/delete/:id', (req, res) => {
-console.log(req.params)
-res.send('recibidoooo!');
-})
+app.get('/turn/:id', async (req, res) => {
+const { id } = req.params;
+const task = await Task.findById(id);
+task.status = !task.status;
+await task.save();
+res.redirect('/vista3');
+});
+
+app.get('/edit/:id', async (req, res) =>{
+  const { id } = req.params;
+  const task = await Task.findById(id);
+  res.render('edit', {
+    task
+  });
+});
+
+app.post('/edit/:id', async (req, res) => {
+  const { id } = req.params;
+  await Task.update({_id: id}, req.body);
+  res.redirect('/vista3');
+});
+
+app.get('/delete/:id', async (req, res) => {
+const { id } = req.params;
+await Task.remove({_id: id});
+res.redirect('/vista3')
+});
 
 /*FINAL DE RUTAS
 
 app.use((req,res,next) => {
     res.status(404).sendFile(__dirname + '/public/404.html' )
-  }) */
+  }) 
+  */
 
 app.listen(port, () => {
     console.log(`la aplicacion esta funcionando en:http://localhost:${port}`)

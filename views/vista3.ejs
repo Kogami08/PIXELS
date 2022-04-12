@@ -1,8 +1,4 @@
 <%- include("templates/headtask.ejs") %>
-<pre>
-</pre>
-
-   
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -31,7 +27,6 @@
                           <th>Titulo</th>
                           <th>descripcion</th>
                           <th>Operacion</th>
-                          
                         </tr>
                       </thead>
                       <tbody>
@@ -41,9 +36,11 @@
                                 <td><%= tasks[i].title %> </td>
                                 <td><%= tasks[i].descripcion %> </td>
                                 <td>
-                                    <a href="" class="btn btn-dark"> Simon</a>
-                                    <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger"> Valio</a>
-                                    <a href="" class="btn btn-info">Edit</a>
+                                    <a href="/turn/<%= tasks[i]._id %>" 
+                                    class="btn <%= tasks[i].status ? 'btn-success': 'btn-dark' %> "> 
+                                    Confirmar</a>
+                                    <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger"> Delete</a>
+                                    <a href="/edit/<%= tasks[i]._id %> " class="btn btn-info">Edit</a>
                                 </td>
                             </tr>
                           <% } %>
@@ -53,7 +50,4 @@
             </div>
         </div>
     </div>
-
-
-
 <%- include("templates/footertask.ejs") %>
